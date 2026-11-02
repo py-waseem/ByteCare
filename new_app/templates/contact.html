@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | ByteCare Computer Services</title>
+  <meta name="description" content="Call, email or send a message to book a computer repair.">
+  <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="{% url 'home' %}">Byte<span>Care</span></a>
+    <nav aria-label="Main">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'contact' %}" aria-current="page">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-hero">
+    <span class="label">Contact</span>
+    <h1>Book a repair or ask a question</h1>
+    <p>Call, send a message, or visit the shop. We reply within one working day.</p>
+  </div>
+
+  <!-- EDIT: replace the placeholder phone, email and address with your real details -->
+  <section class="band">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="label">Phone</span>
+          <strong id="phone">9825336234</strong>
+          <p>Call or WhatsApp</p>
+          <button class="copy" id="copy-phone" type="button">Copy number</button>
+        </div>
+        <div class="contact-item">
+          <span class="label">Email</span>
+          <strong>bytecare@gmail.com</strong>
+          <p>We reply within one working day</p>
+        </div>
+        <div class="contact-item">
+          <span class="label">Shop</span>
+          <strong>Mahendra Chowk, Biratnagar</strong>
+          <p>Bring your device during opening hours</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-layout">
+
+      <!-- Message form.
+           IMPORTANT: a plain HTML page cannot send email by itself.
+           Option 1: make a free form at formspree.io and paste its address into action="..." below.
+           Option 2: later, post this form to your own Django view. -->
+      <div>
+        <div class="section-head">
+          <span class="label">Message</span>
+          <h2>Send us a message</h2>
+        </div>
+        {% if messages %}
+  {% for message in messages %}
+    <p class="notice">{{ message }}</p>
+  {% endfor %}
+{% endif %}
+
+<form method="post">
+  {% csrf_token %}
+
+  <div class="field">
+    <label for="{{ form.name.id_for_label }}">Your name</label>
+    {{ form.name }}
+    {{ form.name.errors }}
+  </div>
+
+  <div class="field">
+    <label for="{{ form.phone.id_for_label }}">Phone number</label>
+    {{ form.phone }}
+    {{ form.phone.errors }}
+  </div>
+
+  <div class="field">
+    <label for="{{ form.service.id_for_label }}">What do you need?</label>
+    {{ form.service }}
+    {{ form.service.errors }}
+  </div>
+
+  <div class="field">
+    <label for="{{ form.message.id_for_label }}">Describe the problem</label>
+    {{ form.message }}
+    {{ form.message.errors }}
+  </div>
+
+  <div><button class="btn btn-primary" type="submit">Send message</button></div>
+</form>
+      </div>
+
+      <!-- Opening hours (edit to match your shop) -->
+      <div>
+        <div class="section-head">
+          <span class="label">Hours</span>
+          <h2>Opening hours</h2>
+        </div>
+        <table class="hours">
+          <tbody>
+            <tr><td>Sunday to Thursday</td><td>10:00 - 18:00</td></tr>
+            <tr><td>Friday</td><td>10:00 - 16:00</td></tr>
+            <tr><td>Saturday</td><td>Closed</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:16px; color:var(--muted); font-size:0.93rem">Need help outside these hours? Send a message and we will reply the next working day.</p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; ByteCare Computer Services</span>
+    <span><a href="{% url 'about' %}">About</a> &middot; <a href="{% url 'services' %}">Services</a> &middot; <a href="{% url 'contact' %}">Contact</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

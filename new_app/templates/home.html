@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ByteCare Computer Services</title>
+  <meta name="description" content="Computer repair, virus removal, data recovery and network setup for homes, students and small offices.">
+  <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="{% url 'home' %}">Byte<span>Care</span></a>
+    <nav aria-label="Main">
+      <a href="{% url 'home' %}" aria-current="page">Home</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="label">Computer repair &amp; IT support</span>
+        <h1>Your computer, working again.</h1>
+        <p class="lead">Repairs, virus removal, data recovery and network setup for homes, students and small offices. Bring it in, or book a visit.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="{% url 'contact' %}">Book a repair</a>
+          <a class="btn btn-ghost" href="{% url 'services' %}">See services</a>
+        </div>
+      </div>
+
+      <div class="ticket" aria-label="Sample repair ticket">
+        <div class="ticket-head"><span>REPAIR TICKET #1042</span><span>Laptop</span></div>
+        <ul>
+          <li class="done"><span class="dot"></span>Checked in<span class="state">Mon 10:15</span></li>
+          <li class="done"><span class="dot"></span>Problem found<span class="state">Mon 11:00</span></li>
+          <li class="now"><span class="dot"></span>Being repaired<span class="state">In progress</span></li>
+          <li><span class="dot"></span>Ready for pickup<span class="state">Next</span></li>
+        </ul>
+        <p class="ticket-note">Sample ticket. You get a clear status at every stage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services preview -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Services</span>
+        <h2>What we fix and set up</h2>
+        <p>Tell us the problem and we will say what it needs before we start any work.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Laptop &amp; desktop repair</h3><p>Slow, overheating, broken screen, no power, keyboard or battery problems.</p></article>
+        <article class="card"><h3>Virus &amp; malware removal</h3><p>Pop-ups, hijacked browsers and unknown programs removed, then protection set up.</p></article>
+        <article class="card"><h3>Windows &amp; software install</h3><p>Fresh Windows or Linux, drivers, Office and the programs you actually use.</p></article>
+        <article class="card"><h3>Data backup &amp; recovery</h3><p>Photos and files rescued from failing drives, plus a simple backup plan.</p></article>
+        <article class="card"><h3>Network &amp; Wi-Fi setup</h3><p>Router configuration, dead spots, printers and shared files for home or office.</p></article>
+        <article class="card"><h3>Custom PC &amp; upgrades</h3><p>Build a PC for study, work or gaming, or add RAM and an SSD to speed up an old one.</p></article>
+      </div>
+      <p class="more"><a href="{% url 'services' %}">See what is included in each service &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">How it works</span>
+        <h2>Three steps, no surprises</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Tell us the problem</h3><p>Call, message, or bring the device to the shop.</p></li>
+        <li><h3>We check and quote</h3><p>You hear what is wrong and the cost before any repair begins.</p></li>
+        <li><h3>Fixed and returned</h3><p>Pick it up, or we deliver it. Repairs come with a short service warranty.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Call to action -->
+  <section class="band cta">
+    <div class="wrap">
+      <div>
+        <h2>Ready to get it fixed?</h2>
+        <p>Send us a message or call the shop.</p>
+      </div>
+      <a class="btn btn-primary" href="{% url 'contact' %}">Contact us</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; ByteCare Computer Services</span>
+    <span><a href="{% url 'about' %}">About</a> &middot; <a href="{% url 'services' %}">Services</a> &middot; <a href="{% url 'contact' %}">Contact</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services | ByteCare Computer Services</title>
+  <meta name="description" content="Laptop repair, virus removal, software installation, data recovery, network setup and custom PC builds.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="{% url 'home' %}">Byte<span>Care</span></a>
+    <nav aria-label="Main">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'services' %}" aria-current="page">Services</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-hero">
+    <span class="label">Services</span>
+    <h1>What we do, and what is included</h1>
+    <p>Every job starts with a check. You get the diagnosis and the price first, then you decide.</p>
+  </div>
+
+  <section class="band">
+    <div class="wrap">
+
+      <!-- To add a service, copy one <div class="service"> block and edit the text -->
+      <div class="service">
+        <div>
+          <h2>Laptop &amp; desktop repair</h2>
+          <p class="for">For: computers that are slow, noisy, hot or will not start.</p>
+        </div>
+        <ul class="checklist">
+          <li>Full hardware and software check</li>
+          <li>Screen, keyboard, battery and charger replacement</li>
+          <li>Cleaning, fan repair and thermal paste</li>
+          <li>RAM and storage upgrades to speed things up</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div>
+          <h2>Virus &amp; malware removal</h2>
+          <p class="for">For: pop-ups, redirects, slow browsing and unknown programs.</p>
+        </div>
+        <ul class="checklist">
+          <li>Scan and removal of viruses, adware and spyware</li>
+          <li>Browser and startup clean-up</li>
+          <li>Security software set up and updated</li>
+          <li>Simple tips to avoid it happening again</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div>
+          <h2>Windows &amp; software install</h2>
+          <p class="for">For: a fresh start, a new computer, or missing programs.</p>
+        </div>
+        <ul class="checklist">
+          <li>Clean install of Windows or Linux</li>
+          <li>Drivers, updates and Microsoft Office</li>
+          <li>Browsers, PDF readers, media players and study tools</li>
+          <li>Your files copied across from the old setup</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div>
+          <h2>Data backup &amp; recovery</h2>
+          <p class="for">For: deleted files, failing drives and peace of mind.</p>
+        </div>
+        <ul class="checklist">
+          <li>Recovery from hard drives, SSDs, USB drives and memory cards</li>
+          <li>Files saved before a repair or reinstall</li>
+          <li>Automatic backup set up to an external drive or the cloud</li>
+          <li>Honest answer if a file cannot be recovered</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div>
+          <h2>Network &amp; Wi-Fi setup</h2>
+          <p class="for">For: homes, shops and small offices.</p>
+        </div>
+        <ul class="checklist">
+          <li>Router and modem configuration</li>
+          <li>Wi-Fi coverage fixed with the right placement or extenders</li>
+          <li>Printers and shared folders connected</li>
+          <li>Password and guest network set up safely</li>
+        </ul>
+      </div>
+
+      <div class="service">
+        <div>
+          <h2>Custom PC &amp; upgrades</h2>
+          <p class="for">For: students, designers, developers and gamers.</p>
+        </div>
+        <ul class="checklist">
+          <li>Parts list that fits your budget and your work</li>
+          <li>Assembly, cable tidying and testing</li>
+          <li>Operating system and software installed</li>
+          <li>Upgrade advice for an existing computer</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Common questions -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Questions</span>
+        <h2>Common questions</h2>
+      </div>
+      <!-- Edit these answers so they match how your shop really works -->
+      <details>
+        <summary>How much will my repair cost?</summary>
+        <p>It depends on the problem. We check the device first and tell you the price before we start. If you decline the repair, you pay nothing more.</p>
+      </details>
+      <details>
+        <summary>How long does a repair take?</summary>
+        <p>Simple jobs such as software problems are often done the same day. Parts that must be ordered take longer, and we tell you the time when we quote.</p>
+      </details>
+      <details>
+        <summary>Will I lose my files?</summary>
+        <p>We back up your files before any repair that could affect them, and we tell you first if something puts your data at risk.</p>
+      </details>
+      <details>
+        <summary>Do you visit homes and offices?</summary>
+        <p>Yes, for network setup and on-site support. Contact us with your location and the problem.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="band cta">
+    <div class="wrap">
+      <div>
+        <h2>Not sure what you need?</h2>
+        <p>Describe the problem and we will point you the right way.</p>
+      </div>
+      <a class="btn btn-primary" href="{% url 'contact' %}">Contact us</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; ByteCare Computer Services</span>
+    <span><a href="{% url 'about' %}">About</a> &middot; <a href="{% url 'services' %}">Services</a> &middot; <a href="{% url 'contact' %}">Contact</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

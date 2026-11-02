@@ -1,0 +1,94 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | ByteCare Computer Services</title>
+  <meta name="description" content="Who we are, how we work, and who we help.">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="{% url 'home' %}">Byte<span>Care</span></a>
+    <nav aria-label="Main">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'services' %}">Services</a>
+      <a href="{% url 'about' %}" aria-current="page">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-hero">
+    <span class="label">About us</span>
+    <h1>A local shop that explains what it fixes</h1>
+    <p>ByteCare repairs computers and sets up networks for people who just want things to work.</p>
+  </div>
+
+  <!-- EDIT: replace this story with your own. Real details (when you started, where you are, your background) build trust. -->
+  <section class="band">
+    <div class="wrap two-col">
+      <div>
+        <span class="label">Our story</span>
+        <h2 style="font-size:1.8rem; margin-top:8px">Why we started</h2>
+      </div>
+      <div class="prose">
+        <p>ByteCare began with a simple idea: when a computer breaks, you should understand what is wrong, what it will cost, and what happens next, without technical jargon.</p>
+        <p>We work on laptops, desktops and home or office networks. Every job begins with a proper check, and you hear the result in plain language before any repair starts.</p>
+        <p>Add your own story here: when and why you started, your experience, and the area you serve.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">How we work</span>
+        <h2>What you can expect</h2>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Honest diagnosis</h3><p>We tell you what is actually wrong and only recommend repairs that are needed.</p></article>
+        <article class="card"><h3>Plain language</h3><p>No jargon. If a part must be replaced, we explain why and show you the options.</p></article>
+        <article class="card"><h3>Your data stays yours</h3><p>We do not open personal files, and we ask before touching anything that holds your data.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Who we help</span>
+        <h2>Our customers</h2>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Homes</h3><p>Family computers, Wi-Fi problems, printers and old laptops that need a second life.</p></article>
+        <article class="card"><h3>Students</h3><p>Affordable repairs, software installs and upgrades so coursework is never stuck.</p></article>
+        <article class="card"><h3>Small offices</h3><p>Network setup, shared printers, backups and support when something stops working.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div>
+        <h2>Have a computer problem?</h2>
+        <p>Tell us what is happening and we will help.</p>
+      </div>
+      <a class="btn btn-primary" href="{% url 'contact' %}">Contact us</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; ByteCare Computer Services</span>
+    <span><a href="{% url 'about' %}">About</a> &middot; <a href="{% url 'services' %}">Services</a> &middot; <a href="{% url 'contact' %}">Contact</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
